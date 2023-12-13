@@ -1,5 +1,5 @@
 # laravel-admin
-Anything which is good for laravel-admin
+Anything good for laravel-admin
 
 ## Grid components support mouse multiple selection
 Add below php code to Admin\bootstrap.php
