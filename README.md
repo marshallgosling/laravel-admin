@@ -1,7 +1,7 @@
 # laravel-admin
 Anything good for laravel-admin
 
-## Grid Filter using % as input, no hard code
+## Grid Filter using % as wildcard, no hard code
 Add below php code to Admin\bootstrap.php
 ```php
 Encore\Admin\Grid\Filter::extend('mlike', \App\Admin\Extensions\MyLike::class);
