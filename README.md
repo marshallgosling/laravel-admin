@@ -1,6 +1,57 @@
 # laravel-admin
 Anything good for laravel-admin
 
+## Customer Form for redirect with querystring after submitted.
+MyForm.php file
+```php
+<?php
+
+namespace App\Admin\Extensions;
+
+use Encore\Admin\Form;
+
+class MyForm extends Form
+{
+    public $queryString = '';
+
+    public function resource($slice = -2): string
+    {
+        $segments = explode('/', trim(\request()->getUri(), '/'));
+
+        if ($slice !== 0) {
+            $segments = array_slice($segments, 0, $slice);
+        }
+
+        return implode('/', $segments).$this->queryString;
+    }
+}
+```
+
+Usage for Form function in AdminController file
+```
+class MyAdminController {
+    /**
+     * Make a form builder.
+     *
+     * @return Form
+     */
+    protected function form()
+    {
+        $form = new MyForm(new TemplateRecords());
+
+        // It will redirect to the previous page with the querystring 'parent_id=xxx'
+        if(key_exists('parent_id', $_REQUEST)) $form->queryString = '?parent_id='.$_REQUEST['parent_id'];
+
+        $form->select('parent_id', __('Parent'))->default(key_exists('parent_id', $_REQUEST) ? $_REQUEST['parent_id']:'')
+                ->options([]);
+
+        ...
+
+        return $form;
+    }
+}
+```
+
 ## Grid Filter using % as wildcard, no hard code
 Add below php code to Admin\bootstrap.php
 ```php
