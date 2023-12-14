@@ -26,7 +26,7 @@ Usage
 ```php
 
 $grid->filter(function (Grid\Filter $filter) {
-    $filter->mlike('name', __('Name'))->placeholder('User % for wildcard，e.g great% 或 %good%');
+    $filter->mlike('name', __('Name'))->placeholder('Use % as wildcard，e.g great% 或 %good%');
 });
 
 ```
