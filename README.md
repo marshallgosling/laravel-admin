@@ -22,6 +22,14 @@ class MyLike extends Like
 
 ```
 
+Usage
+```php
+
+$grid->filter(function (Grid\Filter $filter) {
+    $filter->mlike('name', __('Name'))->placeholder('User % for wildcard，e.g great% 或 %good%');
+});
+
+```
 
 ## Grid components support mouse multiple selection
 Add below php code to Admin\bootstrap.php
