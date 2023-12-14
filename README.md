@@ -1,6 +1,28 @@
 # laravel-admin
 Anything good for laravel-admin
 
+## Grid Filter using % as input, no hard code
+Add below php code to Admin\bootstrap.php
+```php
+Encore\Admin\Grid\Filter::extend('mlike', \App\Admin\Extensions\MyLike::class);
+
+```
+
+MyLike.php file
+```
+<?php
+namespace App\Admin\Extensions;
+
+use Encore\Admin\Grid\Filter\Like;
+
+class MyLike extends Like
+{
+    protected $exprFormat = '{value}';
+}
+
+```
+
+
 ## Grid components support mouse multiple selection
 Add below php code to Admin\bootstrap.php
 
