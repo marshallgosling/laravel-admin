@@ -9,7 +9,7 @@ Encore\Admin\Grid\Filter::extend('mlike', \App\Admin\Extensions\MyLike::class);
 ```
 
 MyLike.php file
-```
+```php
 <?php
 namespace App\Admin\Extensions;
 
