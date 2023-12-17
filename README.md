@@ -41,7 +41,7 @@ class MyForm extends Form
 ```
 
 Usage for Form function in AdminController file
-```
+```php
 class MyAdminController {
     /**
      * Make a form builder.
