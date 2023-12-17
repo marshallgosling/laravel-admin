@@ -90,7 +90,7 @@ Usage
 ```php
 
 $grid->filter(function (Grid\Filter $filter) {
-    $filter->mlike('name', __('Name'))->placeholder('Use % as wildcard，e.g. great% 或 %good%');
+    $filter->mlike('name', __('Name'))->placeholder('Use % as wildcard，e.g. great% or %good%');
 });
 
 ```
@@ -148,7 +148,7 @@ Encore\Admin\Grid::init(function (Encore\Admin\Grid $grid) {
             $('.grid-select-all-btn').hide();
         }
 
-        $('.grid-select-all-btn .selected').html("已选择 {n} 项".replace('{n}', selected));
+        $('.grid-select-all-btn .selected').html("Selected {n} items.".replace('{n}', selected));
     });
 JS;
     \Encore\Admin\Facades\Admin::script($js);
