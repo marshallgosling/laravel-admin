@@ -1,6 +1,19 @@
 # laravel-admin
 Anything good for laravel-admin
 
+## Disable tools' buttons in Show class via bootstrap init.
+bootstrap.php file
+```php
+
+\Encore\Admin\Show::init(function (\Encore\Admin\Show $show) {
+    $show->panel()->tools(function (\Encore\Admin\Show\Tools $tools) {
+        $tools->disableDelete();
+        $tools->disableEdit();
+        $tools->disableList();
+    });
+});
+```
+
 ## Customer Form for redirect with querystring after submitted.
 MyForm.php file
 ```php
